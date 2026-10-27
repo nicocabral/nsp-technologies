@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NSP Technologies is a software studio building complete web platforms for Philippine businesses — makers of Gatherly (events & catering management) and EduFlow (school management).">
+<meta name="author" content="NSP Technologies">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NSP Technologies">
+<meta property="og:description" content="Business software, built end to end for Philippine businesses. Makers of Gatherly and EduFlow.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NSP Technologies">
+<meta name="twitter:description" content="Business software, built end to end for Philippine businesses. Makers of Gatherly and EduFlow.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>NSP Technologies — Business software for Philippine businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#0b1220; --ink-2:#0f1a2e; --ink-soft:#162436;
+    --paper:#f7f8f5; --card:#ffffff; --line:#e6e8e2;
+    --text:#13202e; --text-2:#51606e; --text-3:#8995a0;
+    --teal:#0f766e; --teal-2:#14b8a6; --teal-bright:#2dd4bf; --teal-faint:#e1f0ec;
+    --emerald:#10b981; --cream:#fcf8ef; --cream-line:#efe7d3;
+    --blue:#2563eb; --blue-ink:#0f1f3d; --blue-faint:#eaf1fe;
+    --on-dark:#e9eef3; --on-dark-2:#9fb0c0; --on-dark-3:#64788c;
+    --maxw:1120px; --radius:16px;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --disp:'Space Grotesk',system-ui,sans-serif;
+    --body:'Hanken Grotesk',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono)}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--teal);display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"_>";color:var(--teal-2);font-weight:700}
+
+  /* ---------- logo ---------- */
+  .logo{display:inline-flex;align-items:center;gap:11px;font-family:var(--disp)}
+  .logo .mk{position:relative;width:34px;height:34px;flex:none}
+  .logo .word{font-size:23px;font-weight:700;letter-spacing:-.03em}
+  .logo .word b{font-weight:700}
+  .logo.light .word{color:var(--on-dark)}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(17,30,52,.94) 0%,rgba(11,18,32,.80) 100%);
+    backdrop-filter:blur(14px) saturate(150%);
+    border-bottom:1px solid rgba(45,212,191,.18);
+    box-shadow:0 1px 0 rgba(45,212,191,.10),0 14px 34px -22px rgba(0,0,0,.75)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a:not(.btn){position:relative}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;
+    border-radius:2px;background:var(--teal-bright);transition:right .25s ease}
+  .nav-links a:not(.btn):hover::after{right:0}
+  .status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;
+    color:#bcccd8;letter-spacing:.03em;padding:5px 13px;border:1px solid rgba(45,212,191,.28);
+    border-radius:20px;background:rgba(45,212,191,.10)}
+  .status .live{width:7px;height:7px;border-radius:50%;background:var(--teal-bright);
+    box-shadow:0 0 8px rgba(45,212,191,.9)}
+  @media(max-width:860px){.status{display:none}}
+  .nav-links a:not(.btn){font-size:14.5px;font-weight:500;color:#c6d2dd;transition:color .2s}
+  .nav-links a:not(.btn):hover{color:var(--teal-bright)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:500;
+    font-size:14.5px;padding:10px 18px;border-radius:10px;cursor:pointer;transition:.2s;border:1px solid transparent}
+  .btn-primary{background:var(--teal-2);color:#04201b}
+  .btn-primary:hover{background:var(--teal-bright);transform:translateY(-1px)}
+  .btn-ghost{color:var(--on-dark);border-color:rgba(255,255,255,.18)}
+  .btn-ghost:hover{border-color:var(--teal-2);color:var(--teal-bright)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--ink);color:var(--on-dark);overflow:hidden;
+    padding:84px 0 100px}
+  .hero svg.graph{position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+  .hero .veil{position:absolute;inset:0;z-index:1;background:
+    radial-gradient(62% 72% at 50% 44%,rgba(7,11,20,.88) 0%,rgba(7,11,20,.52) 52%,rgba(11,18,32,.08) 100%)}
+  .hero .glow{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:1;
+    width:min(760px,86vw);height:440px;pointer-events:none;
+    background:radial-gradient(circle,rgba(45,212,191,.16) 0%,rgba(45,212,191,0) 66%)}
+  /* floating commit annotations */
+  .commits{position:absolute;inset:0;z-index:2;pointer-events:none}
+  .ann{position:absolute;display:flex;align-items:center;gap:9px;font-family:var(--mono);
+    font-size:12px;color:var(--on-dark-2);white-space:nowrap}
+  .ann .nd{width:9px;height:9px;border-radius:50%;background:var(--teal-bright);flex:none;
+    box-shadow:0 0 10px rgba(45,212,191,.7)}
+  .ann .hash{color:var(--teal-bright)}
+  .ann .msg{color:var(--on-dark-3)}
+  .ann.a1{left:4%;top:24%}
+  .ann.a2{left:6%;top:66%}
+  .ann.a3{right:4%;top:32%;flex-direction:row-reverse}
+  .ann.a4{right:6%;top:72%;flex-direction:row-reverse}
+  @media(max-width:1080px){.commits{display:none}}
+  .hero .wrap{position:relative;z-index:3;max-width:880px;text-align:center}
+  .hero h1{font-size:clamp(40px,6.2vw,70px);letter-spacing:-.035em}
+  .hero h1 .accent{color:var(--teal-bright)}
+  .hero .lead{margin:24px auto 0;max-width:620px;font-size:19px;color:var(--on-dark-2);line-height:1.6}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+  .hero .cta .btn{padding:13px 24px;font-size:15.5px}
+  .trust{margin-top:52px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12.5px;color:var(--on-dark-3);letter-spacing:.04em}
+  .trust b{color:var(--on-dark-2);font-weight:500}
+  .trust .dot{width:5px;height:5px;border-radius:50%;background:var(--teal);display:inline-block}
+
+  /* ---------- section base ---------- */
+  section{padding:96px 0}
+  .lede{max-width:680px}
+  .lede h2{font-size:clamp(28px,3.6vw,40px);margin-top:16px}
+  .lede p{margin-top:18px;color:var(--text-2);font-size:18.5px}
+
+  /* ---------- studio statement ---------- */
+  .studio{background:var(--paper)}
+  .studio .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .statnums{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .statnum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px}
+  .statnum .n{font-family:var(--disp);font-size:34px;font-weight:600;letter-spacing:-.03em;color:var(--teal)}
+  .statnum .l{font-size:14px;color:var(--text-2);margin-top:4px}
+  @media(max-width:820px){.studio .grid{grid-template-columns:1fr;gap:34px}}
+
+  /* ---------- product showcase ---------- */
+  .product{position:relative}
+  .product.gath{background:var(--cream)}
+  .product.edu{background:#f4f7fc}
+  .product .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .product.edu .grid{direction:rtl}
+  .product.edu .grid>*{direction:ltr}
+  .p-copy .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+  .product.gath .kicker{color:var(--emerald)}
+  .product.edu .kicker{color:var(--blue)}
+  .p-copy h2{font-size:clamp(30px,4vw,44px);margin-top:14px}
+  .p-copy .tag{font-size:19px;color:var(--text-2);margin-top:16px;max-width:460px}
+  .flist{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 20px}
+  .flist li{display:flex;align-items:flex-start;gap:9px;font-size:15px;color:var(--text)}
+  .flist .ic{flex:none;width:19px;height:19px;margin-top:2px}
+  .product.gath .flist .ic{color:var(--emerald)}
+  .product.edu .flist .ic{color:var(--blue)}
+  .p-meta{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .p-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:500;font-size:15px}
+  .product.gath .p-link{color:var(--emerald)}
+  .product.edu .p-link{color:var(--blue)}
+  .p-link:hover{gap:12px}
+  .usedby{font-family:var(--mono);font-size:12.5px;color:var(--text-3);border-left:2px solid var(--line);padding-left:14px}
+  .usedby b{color:var(--text);font-weight:500;display:block;font-family:var(--body)}
+  @media(max-width:820px){.product .grid,.product.edu .grid{grid-template-columns:1fr;gap:40px;direction:ltr}
+    .flist{grid-template-columns:1fr}}
+
+  /* ---------- browser mock ---------- */
+  .browser{border-radius:14px;overflow:hidden;background:#fff;
+    box-shadow:0 30px 60px -28px rgba(10,20,35,.4),0 2px 8px rgba(10,20,35,.06);border:1px solid rgba(0,0,0,.06)}
+  .bchrome{display:flex;align-items:center;gap:8px;padding:11px 14px;background:#eef0ee;border-bottom:1px solid rgba(0,0,0,.05)}
+  .bdot{width:11px;height:11px;border-radius:50%}
+  .burl{margin-left:10px;font-family:var(--mono);font-size:12px;color:#6b7680;background:#fff;
+    border-radius:7px;padding:4px 12px;flex:1}
+  .screen{padding:18px;display:flex;gap:14px;min-height:300px}
+
+  /* gatherly mock */
+  .g-side{width:40px;flex:none;display:flex;flex-direction:column;gap:9px;align-items:center;padding-top:4px}
+  .g-side .av{width:28px;height:28px;border-radius:8px;background:var(--emerald)}
+  .g-side .nv{width:22px;height:5px;border-radius:3px;background:#dfe7df}
+  .g-body{flex:1;background:#fbfdf9;border-radius:10px;padding:16px}
+  .g-h{font-family:var(--disp);font-weight:600;font-size:15px;color:#14432f}
+  .g-sub{font-size:11px;color:#7d8c82;margin-top:2px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
+  .tile{background:#fff;border:1px solid #edf2ea;border-radius:10px;padding:11px}
+  .tile .ti{width:22px;height:22px;border-radius:7px;background:var(--teal-faint);margin-bottom:9px}
+  .tile .tn{font-family:var(--disp);font-weight:600;font-size:16px;color:#123}
+  .tile .tl{font-size:9.5px;color:#8a978d;margin-top:2px}
+  .grow{height:7px;border-radius:4px;background:#eaf0ea;margin-top:10px}
+  .rowl{display:flex;align-items:center;gap:9px;margin-top:12px;background:#fff;border:1px solid #edf2ea;border-radius:9px;padding:9px 11px}
+  .rowl .rc{width:22px;height:22px;border-radius:6px;background:var(--teal-faint)}
+  .rowl .rt{font-size:11px;font-weight:600;color:#1c3}
+  .pill{margin-left:auto;font-size:9px;font-family:var(--mono);background:#e4f6ec;color:#17794a;padding:3px 8px;border-radius:20px}
+
+  /* eduflow mock */
+  .e-side{width:92px;flex:none;background:var(--blue-ink);border-radius:10px;padding:12px 10px;color:#cdd8ec}
+  .e-brand{display:flex;align-items:center;gap:7px;font-family:var(--disp);font-weight:600;font-size:12px;color:#fff}
+  .e-brand .eb{width:18px;height:18px;border-radius:6px;background:var(--blue)}
+  .e-nav{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .e-nav span{height:6px;border-radius:3px;background:rgba(255,255,255,.14)}
+  .e-nav span.on{background:var(--blue)}
+  .e-body{flex:1;padding:4px 2px}
+  .e-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+  .etile{background:#fff;border:1px solid #e7edf6;border-radius:10px;padding:11px}
+  .etile .el{font-size:9px;letter-spacing:.08em;color:#8a97ab;text-transform:uppercase;font-family:var(--mono)}
+  .etile .en{font-family:var(--disp);font-weight:600;font-size:17px;margin-top:5px}
+  .echart{margin-top:10px;background:#fff;border:1px solid #e7edf6;border-radius:10px;padding:12px 12px 8px;display:flex;align-items:flex-end;gap:7px;height:92px}
+  .echart .bar{flex:1;border-radius:4px 4px 0 0;background:var(--blue);opacity:.85}
+
+  /* ---------- why / values ---------- */
+  .why{background:var(--ink);color:var(--on-dark)}
+  .why .lede h2{color:var(--on-dark)}
+  .why .lede p{color:var(--on-dark-2)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+  .vcard{background:var(--ink-2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px 22px}
+  .vcard .vi{width:40px;height:40px;border-radius:11px;background:rgba(45,212,191,.12);
+    display:flex;align-items:center;justify-content:center;color:var(--teal-bright);margin-bottom:18px}
+  .vcard h3{font-size:18px;color:var(--on-dark)}
+  .vcard p{font-size:14.5px;color:var(--on-dark-2);margin-top:9px;line-height:1.55}
+  @media(max-width:900px){.vgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.vgrid{grid-template-columns:1fr}}
+
+  /* ---------- contact ---------- */
+  .contact{background:linear-gradient(180deg,var(--ink) 0%,#071a2b 100%);color:var(--on-dark);text-align:center}
+  .contact h2{font-size:clamp(32px,4.6vw,52px);letter-spacing:-.03em}
+  .contact h2 .accent{color:var(--teal-bright)}
+  .contact p{max-width:520px;margin:20px auto 0;color:var(--on-dark-2);font-size:18px}
+  .contact .cta{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .contact .btn{padding:15px 28px;font-size:16px}
+  .mailline{margin-top:26px;font-family:var(--mono);font-size:14px;color:var(--on-dark-3)}
+  .mailline a{color:var(--teal-bright)}
+
+  /* ---------- footer ---------- */
+  footer{background:#071320;color:var(--on-dark-3);padding:40px 0;border-top:1px solid rgba(255,255,255,.06)}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer .fnote{font-family:var(--mono);font-size:12.5px}
+  footer a{color:var(--on-dark-2)}
+  footer a:hover{color:var(--teal-bright)}
+
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    @keyframes rise{to{opacity:1;transform:none}}
+    .ann{opacity:0;animation:rise .8s ease forwards}
+    .ann.a1{animation-delay:.5s}.ann.a2{animation-delay:.75s}
+    .ann.a3{animation-delay:.62s}.ann.a4{animation-delay:.88s}
+    .status .live{animation:ping 2s ease-out infinite}
+    @keyframes ping{0%{box-shadow:0 0 0 0 rgba(45,212,191,.55)}70%,100%{box-shadow:0 0 0 7px rgba(45,212,191,0)}}
+    .pulse{animation:nodepulse 2.6s ease-in-out infinite}
+    @keyframes nodepulse{0%,100%{opacity:1}50%{opacity:.4}}
+  }
+</style>
+</head>
+<body>
+<!-- reusable logo mark svg -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="nspmark">
+    <rect x="1.5" y="21" width="17" height="4.4" rx="2.2"/>
+    <path d="M3 7 L15 14 L3 21" fill="none" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="21" y="18.5" width="6.2" height="7.2" rx="1.6"/>
+  </g>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo light" href="#top" aria-label="NSP Technologies home">
+      <span class="mk"><svg viewBox="0 0 30 34" width="34" height="34"><use href="#nspmark" fill="var(--teal-bright)" stroke="var(--teal-bright)"/></svg></span>
+      <span class="word">nsp<span style="color:var(--teal-bright)">·</span></span>
+    </a>
+    <nav class="nav-links">
+      <span class="status"><span class="live"></span>Open for projects</span>
+      <a href="#products">Products</a>
+      <a href="#why">Why NSP</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="mailto:ncabral010694@gmail.com">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="graph" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="none" stroke="#294f6c" stroke-width="2.4">
+        <path d="M150 0 L150 560"/>
+        <path d="M150 120 C150 170 330 170 330 220 L330 560"/>
+        <path d="M330 300 C330 350 150 350 150 400"/>
+        <path d="M230 0 C230 300 150 230 150 470"/>
+        <path d="M1050 0 L1050 560"/>
+        <path d="M1050 150 C1050 205 880 205 880 260 L880 560"/>
+        <path d="M880 340 C880 395 1050 395 1050 450"/>
+        <path d="M970 0 C970 260 1050 210 1050 300"/>
+      </g>
+      <g fill="#2dd4bf">
+        <circle cx="150" cy="120" r="7" class="pulse"/><circle cx="330" cy="220" r="7"/>
+        <circle cx="150" cy="400" r="7"/><circle cx="330" cy="470" r="7" class="pulse"/>
+        <circle cx="1050" cy="150" r="7" class="pulse"/><circle cx="880" cy="260" r="7"/>
+        <circle cx="1050" cy="450" r="7"/><circle cx="880" cy="430" r="7" class="pulse"/>
+      </g>
+      <g fill="#38617f">
+        <circle cx="150" cy="60" r="5"/><circle cx="330" cy="330" r="5"/>
+        <circle cx="1050" cy="300" r="5"/><circle cx="880" cy="510" r="5"/>
+        <circle cx="150" cy="240" r="4"/><circle cx="1050" cy="520" r="4"/>
+      </g>
+    </svg>
+    <div class="veil"></div>
+    <div class="glow"></div>
+    <div class="commits" aria-hidden="true">
+      <div class="ann a1"><span class="nd"></span><span><span class="hash">a6f94c8</span> <span class="msg">gatherly · online bookings</span></span></div>
+      <div class="ann a2"><span class="nd"></span><span><span class="hash">976f479</span> <span class="msg">auto-invoicing + reminders</span></span></div>
+      <div class="ann a3"><span class="nd"></span><span><span class="hash">4e291da</span> <span class="msg">eduflow · SF10 export</span></span></div>
+      <div class="ann a4"><span class="nd"></span><span><span class="hash">782faaf</span> <span class="msg">payroll module shipped</span></span></div>
+    </div>
+    <div class="wrap">
+      <span class="eyebrow reveal" style="color:var(--teal-bright)">NSP Technologies · Software studio</span>
+      <h1 class="reveal" style="animation-delay:.05s">The software that <span class="accent">runs your business</span>, built end to end.</h1>
+      <p class="lead reveal" style="animation-delay:.12s">We design and ship complete web platforms for Philippine businesses — bookings, billing, and people in one place. No spreadsheets held together with tape.</p>
+      <div class="cta reveal" style="animation-delay:.18s">
+        <a class="btn btn-primary" href="mailto:ncabral010694@gmail.com">Start a project</a>
+        <a class="btn btn-ghost" href="#products">See our work</a>
+      </div>
+      <div class="trust reveal" style="animation-delay:.24s">
+        <span>Trusted by</span><span class="dot"></span>
+        <b>Chef John's Garden Cafe &amp; Restaurant</b><span class="dot"></span>
+        <b>Gabriel Archangel Toddler Playschool</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="studio" id="studio">
+    <div class="wrap grid">
+      <div class="lede">
+        <span class="eyebrow">What we do</span>
+        <h2>One studio. Real products, already running real businesses.</h2>
+        <p>NSP Technologies builds operations software made for the Philippines — peso-native, multi-branch, and built to handle the whole job from first inquiry to the last payment. We don't sell demos. Everything we show you is live software our clients run every day.</p>
+      </div>
+      <div class="statnums">
+        <div class="statnum"><div class="n">2</div><div class="l">Products in production</div></div>
+        <div class="statnum"><div class="n">₱ PHP</div><div class="l">Peso-native, local forms</div></div>
+        <div class="statnum"><div class="n">10+</div><div class="l">Branches managed across clients</div></div>
+        <div class="statnum"><div class="n">End&nbsp;to&nbsp;end</div><div class="l">Bookings · billing · payroll</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS anchor -->
+  <div id="products"></div>
+
+  <!-- GATHERLY -->
+  <section class="product gath">
+    <div class="wrap grid">
+      <div class="p-copy">
+        <span class="kicker">Gatherly · gathery.space</span>
+        <h2>Run your events business from one dashboard.</h2>
+        <p class="tag">An all-in-one platform for catering, events, and venue businesses. Guests book through your own page; you manage everything else in one clean workspace.</p>
+        <ul class="flist">
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Online reservations &amp; inquiries</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bookings calendar &amp; venues</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Quotes, invoices &amp; payments</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Payroll, timesheets &amp; leaves</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-branch &amp; team roles</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Reports &amp; automatic reminders</li>
+        </ul>
+        <div class="p-meta">
+          <a class="p-link" href="https://gathery.space" target="_blank" rel="noopener">Visit gathery.space →</a>
+          <div class="usedby">In production with<b>Chef John's Garden Cafe &amp; Restaurant</b></div>
+        </div>
+      </div>
+      <div class="browser" aria-hidden="true">
+        <div class="bchrome"><span class="bdot" style="background:#f4615c"></span><span class="bdot" style="background:#f6bd3b"></span><span class="bdot" style="background:#3fc065"></span><span class="burl">gathery.space/dashboard</span></div>
+        <div class="screen" style="background:#f4f8f1">
+          <div class="g-side"><div class="av"></div><div class="nv"></div><div class="nv"></div><div class="nv"></div><div class="nv"></div></div>
+          <div class="g-body">
+            <div class="g-h">Welcome back 👋</div>
+            <div class="g-sub">Here's what's happening with your events today.</div>
+            <div class="tiles">
+              <div class="tile"><div class="ti"></div><div class="tn">9</div><div class="tl">Total inquiries</div></div>
+              <div class="tile"><div class="ti"></div><div class="tn">2</div><div class="tl">Completed</div></div>
+              <div class="tile"><div class="ti"></div><div class="tn">₱687k</div><div class="tl">Revenue collected</div></div>
+            </div>
+            <div class="rowl"><div class="rc"></div><div><div class="rt">Garden wedding · Sta. Rosa</div></div><span class="pill">Confirmed</span></div>
+            <div class="rowl"><div class="rc"></div><div><div class="rt">Corporate lunch · 120 pax</div></div><span class="pill">Invoiced</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUFLOW -->
+  <section class="product edu">
+    <div class="wrap grid">
+      <div class="p-copy">
+        <span class="kicker">EduFlow · gatp.app</span>
+        <h2>A whole school, from admission to report card.</h2>
+        <p class="tag">Complete school management for Philippine schools — K-12 ready, with the DepEd forms, fees, and attendance teachers actually need, not a generic template.</p>
+        <ul class="flist">
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Admissions &amp; enrollment</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Students, sections &amp; subjects</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Attendance &amp; gradebook</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>DepEd SF9 &amp; SF10 printing</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fees, billing &amp; payments</li>
+          <li><svg class="ic" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-branch &amp; push alerts</li>
+        </ul>
+        <div class="p-meta">
+          <a class="p-link" href="https://gatp.app" target="_blank" rel="noopener">Visit gatp.app →</a>
+          <div class="usedby">In production with<b>Gabriel Archangel Toddler Playschool</b></div>
+        </div>
+      </div>
+      <div class="browser" aria-hidden="true">
+        <div class="bchrome"><span class="bdot" style="background:#f4615c"></span><span class="bdot" style="background:#f6bd3b"></span><span class="bdot" style="background:#3fc065"></span><span class="burl">gatp.app/dashboard</span></div>
+        <div class="screen" style="background:#eef2f8">
+          <div class="e-side">
+            <div class="e-brand"><span class="eb"></span>GATP</div>
+            <div class="e-nav"><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="e-body">
+            <div class="e-tiles">
+              <div class="etile"><div class="el">Active students</div><div class="en" style="color:var(--blue)">19</div></div>
+              <div class="etile"><div class="el">Collections</div><div class="en" style="color:#1d9e5f">₱43,948</div></div>
+              <div class="etile"><div class="el">Outstanding</div><div class="en" style="color:#d98019">₱309k</div></div>
+              <div class="etile"><div class="el">Reservations</div><div class="en">0</div></div>
+            </div>
+            <div class="echart">
+              <div class="bar" style="height:38%"></div><div class="bar" style="height:92%"></div>
+              <div class="bar" style="height:60%"></div><div class="bar" style="height:46%"></div>
+              <div class="bar" style="height:44%"></div><div class="bar" style="height:70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="lede">
+        <span class="eyebrow" style="color:var(--teal-bright)">Why NSP</span>
+        <h2>Built the way Philippine businesses actually run.</h2>
+        <p>Most software is built somewhere else and bent to fit. Ours starts from how the work really happens here — the peso, the branches, the forms, the follow-ups.</p>
+      </div>
+      <div class="vgrid">
+        <div class="vcard">
+          <div class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2v20M5 7h9a3 3 0 010 6H7a3 3 0 000 6h10" stroke-linecap="round"/></svg></div>
+          <h3>Peso-native</h3>
+          <p>₱ pricing, local tax and discount handling, and the DepEd forms built in — not bolted on.</p>
+        </div>
+        <div class="vcard">
+          <div class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <h3>End to end</h3>
+          <p>One platform for operations, money, and people. No stitching five tools together.</p>
+        </div>
+        <div class="vcard">
+          <div class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Multi-branch</h3>
+          <p>Run many locations and teams from one login, with roles and per-branch data kept clean.</p>
+        </div>
+        <div class="vcard">
+          <div class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg></div>
+          <h3>Proven, not promised</h3>
+          <p>Both products are live with paying clients today. You're buying working software, not a pitch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--teal-bright);justify-content:center;display:flex">Let's build it</span>
+      <h2 style="margin-top:18px">Tell us what you run.<br>We'll build the <span class="accent">system for it.</span></h2>
+      <p>Whether it's a restaurant, a school, a clinic, or something only you do — if it runs on spreadsheets today, it can run on software tomorrow.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:ncabral010694@gmail.com">Email us</a>
+        <a class="btn btn-ghost" href="https://www.facebook.com/profile.php?id=61591390487128" target="_blank" rel="noopener">Message on Facebook</a>
+      </div>
+      <div class="mailline">_> <a href="mailto:ncabral010694@gmail.com">ncabral010694@gmail.com</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo light" href="#top">
+      <span class="mk"><svg viewBox="0 0 30 34" width="30" height="30"><use href="#nspmark" fill="var(--teal-bright)" stroke="var(--teal-bright)"/></svg></span>
+      <span class="word" style="font-size:19px">nsp technologies</span>
+    </a>
+    <div class="fnote">© <span id="yr"></span> NSP Technologies · Building software in the Philippines</div>
+    <div style="display:flex;gap:20px">
+      <a href="https://gathery.space" target="_blank" rel="noopener">Gatherly</a>
+      <a href="https://gatp.app" target="_blank" rel="noopener">EduFlow</a>
+      <a href="https://www.facebook.com/profile.php?id=61591390487128" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
