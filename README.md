@@ -1,6 +1,6 @@
-# NSP Technologies — company website
+# NSD Technologies — company website
 
-A single-page marketing site for **NSP Technologies**, a software studio
+A single-page marketing site for **NSD Technologies**, a software studio
 building operations software for Philippine businesses. It showcases our two
 products:
 
@@ -21,23 +21,35 @@ Fonts load from Google Fonts; everything else is self-contained.
 
 ## Publishing with GitHub Pages
 
+> GitHub Pages is free **only on public repositories**. If this repo is
+> private, open **Settings → General → Danger Zone → Change repository
+> visibility → Make public** first. (The site contains no secrets.)
+
 1. Commit and push these files to the repository (e.g. the `main` branch).
 2. On GitHub: **Settings → Pages**.
 3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
 4. Branch: **main**, folder: **/ (root)**. Save.
 5. Wait ~1 minute. Your site goes live at
-   `https://<your-username>.github.io/nsp-technologies/`.
+   `https://nicocabral.github.io/nsp-technologies/`.
 
 ### Custom domain (optional)
 
-To serve it from your own domain (e.g. `nsptech.ph`):
+To serve it from your own domain (e.g. `nsdtech.ph`):
 
-1. Add a file named `CNAME` containing just the domain, e.g. `nsptech.ph`.
+1. Add a file named `CNAME` containing just the domain, e.g. `nsdtech.ph`.
 2. At your domain registrar, point the domain to GitHub Pages
-   (a `CNAME` record to `<your-username>.github.io`, or `A` records to
+   (a `CNAME` record to `nicocabral.github.io`, or `A` records to
    GitHub's Pages IPs).
 3. In **Settings → Pages**, enter the custom domain and enable
    **Enforce HTTPS**.
+
+## Renaming the repository (optional)
+
+The repo is currently named `nsp-technologies`. To match the new brand, you
+can rename it to `nsd-technologies` in **Settings → General → Repository
+name**. GitHub keeps redirects from the old name, and the Pages URL becomes
+`https://nicocabral.github.io/nsd-technologies/`. The folder on your computer
+can be renamed too; update the git remote if you do.
 
 ## Facebook link previews
 
